@@ -1,0 +1,19 @@
+package cor.impl;
+
+import cor.DefaultHandlerContext;
+import cor.Handler;
+import cor.Request;
+
+/**
+ * @author han <handwasherhan@gmail.com>
+ * Created on 2023
+ */
+public class Decoder implements Handler {
+
+    @Override
+    public void handle(DefaultHandlerContext ctx, Request request) {
+        request.setMsg(request.getMsg() + ": decoded");
+        ctx.fireRequest(request);
+
+    }
+}
